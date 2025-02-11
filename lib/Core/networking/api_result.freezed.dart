@@ -19,19 +19,19 @@ mixin _$ApiResult<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T data) success,
-    required TResult Function(ApiErrorModel apiErrorModel) failure,
+    required TResult Function(ErrorModel apiErrorModel) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? success,
-    TResult? Function(ApiErrorModel apiErrorModel)? failure,
+    TResult? Function(ErrorModel apiErrorModel)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? success,
-    TResult Function(ApiErrorModel apiErrorModel)? failure,
+    TResult Function(ErrorModel apiErrorModel)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -155,7 +155,7 @@ class _$SuccessImpl<T> with DiagnosticableTreeMixin implements Success<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T data) success,
-    required TResult Function(ApiErrorModel apiErrorModel) failure,
+    required TResult Function(ErrorModel apiErrorModel) failure,
   }) {
     return success(data);
   }
@@ -164,7 +164,7 @@ class _$SuccessImpl<T> with DiagnosticableTreeMixin implements Success<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? success,
-    TResult? Function(ApiErrorModel apiErrorModel)? failure,
+    TResult? Function(ErrorModel apiErrorModel)? failure,
   }) {
     return success?.call(data);
   }
@@ -173,7 +173,7 @@ class _$SuccessImpl<T> with DiagnosticableTreeMixin implements Success<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? success,
-    TResult Function(ApiErrorModel apiErrorModel)? failure,
+    TResult Function(ErrorModel apiErrorModel)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -232,7 +232,7 @@ abstract class _$$FailureImplCopyWith<T, $Res> {
           _$FailureImpl<T> value, $Res Function(_$FailureImpl<T>) then) =
       __$$FailureImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({ApiErrorModel apiErrorModel});
+  $Res call({ErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -254,7 +254,7 @@ class __$$FailureImplCopyWithImpl<T, $Res>
       null == apiErrorModel
           ? _value.apiErrorModel
           : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
+              as ErrorModel,
     ));
   }
 }
@@ -265,7 +265,7 @@ class _$FailureImpl<T> with DiagnosticableTreeMixin implements Failure<T> {
   const _$FailureImpl(this.apiErrorModel);
 
   @override
-  final ApiErrorModel apiErrorModel;
+  final ErrorModel apiErrorModel;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -304,7 +304,7 @@ class _$FailureImpl<T> with DiagnosticableTreeMixin implements Failure<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T data) success,
-    required TResult Function(ApiErrorModel apiErrorModel) failure,
+    required TResult Function(ErrorModel apiErrorModel) failure,
   }) {
     return failure(apiErrorModel);
   }
@@ -313,7 +313,7 @@ class _$FailureImpl<T> with DiagnosticableTreeMixin implements Failure<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? success,
-    TResult? Function(ApiErrorModel apiErrorModel)? failure,
+    TResult? Function(ErrorModel apiErrorModel)? failure,
   }) {
     return failure?.call(apiErrorModel);
   }
@@ -322,7 +322,7 @@ class _$FailureImpl<T> with DiagnosticableTreeMixin implements Failure<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? success,
-    TResult Function(ApiErrorModel apiErrorModel)? failure,
+    TResult Function(ErrorModel apiErrorModel)? failure,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -364,9 +364,9 @@ class _$FailureImpl<T> with DiagnosticableTreeMixin implements Failure<T> {
 }
 
 abstract class Failure<T> implements ApiResult<T> {
-  const factory Failure(final ApiErrorModel apiErrorModel) = _$FailureImpl<T>;
+  const factory Failure(final ErrorModel apiErrorModel) = _$FailureImpl<T>;
 
-  ApiErrorModel get apiErrorModel;
+  ErrorModel get apiErrorModel;
 
   /// Create a copy of ApiResult
   /// with the given fields replaced by the non-null parameter values.

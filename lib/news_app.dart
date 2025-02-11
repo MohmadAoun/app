@@ -1,9 +1,9 @@
-import 'Core/routing/app_router.dart';
-import 'Core/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'Core/di/dependency_injection.dart';
+import 'Core/routing/app_router.dart';
+import 'Core/routing/routes.dart';
 
 class NewsApp extends StatelessWidget {
   final AppRouter appRouter;

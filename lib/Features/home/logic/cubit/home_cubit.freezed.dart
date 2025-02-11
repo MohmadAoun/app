@@ -20,21 +20,25 @@ mixin _$HomeState {
   TResult when<TResult extends Object?>({
     required TResult Function() homeInitial,
     required TResult Function() homeLoading,
-    required TResult Function() homeSuccess,
+    required TResult Function(NewsModel allNews, NewsModel topHeadLines)
+        homeSuccess,
+    required TResult Function(ErrorModel errorModel) homeFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? homeInitial,
     TResult? Function()? homeLoading,
-    TResult? Function()? homeSuccess,
+    TResult? Function(NewsModel allNews, NewsModel topHeadLines)? homeSuccess,
+    TResult? Function(ErrorModel errorModel)? homeFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? homeInitial,
     TResult Function()? homeLoading,
-    TResult Function()? homeSuccess,
+    TResult Function(NewsModel allNews, NewsModel topHeadLines)? homeSuccess,
+    TResult Function(ErrorModel errorModel)? homeFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +47,7 @@ mixin _$HomeState {
     required TResult Function(_Initial value) homeInitial,
     required TResult Function(_Loading value) homeLoading,
     required TResult Function(_Success value) homeSuccess,
+    required TResult Function(_Failure value) homeFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +55,7 @@ mixin _$HomeState {
     TResult? Function(_Initial value)? homeInitial,
     TResult? Function(_Loading value)? homeLoading,
     TResult? Function(_Success value)? homeSuccess,
+    TResult? Function(_Failure value)? homeFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +63,7 @@ mixin _$HomeState {
     TResult Function(_Initial value)? homeInitial,
     TResult Function(_Loading value)? homeLoading,
     TResult Function(_Success value)? homeSuccess,
+    TResult Function(_Failure value)? homeFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -125,7 +132,9 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() homeInitial,
     required TResult Function() homeLoading,
-    required TResult Function() homeSuccess,
+    required TResult Function(NewsModel allNews, NewsModel topHeadLines)
+        homeSuccess,
+    required TResult Function(ErrorModel errorModel) homeFailure,
   }) {
     return homeInitial();
   }
@@ -135,7 +144,8 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? homeInitial,
     TResult? Function()? homeLoading,
-    TResult? Function()? homeSuccess,
+    TResult? Function(NewsModel allNews, NewsModel topHeadLines)? homeSuccess,
+    TResult? Function(ErrorModel errorModel)? homeFailure,
   }) {
     return homeInitial?.call();
   }
@@ -145,7 +155,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? homeInitial,
     TResult Function()? homeLoading,
-    TResult Function()? homeSuccess,
+    TResult Function(NewsModel allNews, NewsModel topHeadLines)? homeSuccess,
+    TResult Function(ErrorModel errorModel)? homeFailure,
     required TResult orElse(),
   }) {
     if (homeInitial != null) {
@@ -160,6 +171,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) homeInitial,
     required TResult Function(_Loading value) homeLoading,
     required TResult Function(_Success value) homeSuccess,
+    required TResult Function(_Failure value) homeFailure,
   }) {
     return homeInitial(this);
   }
@@ -170,6 +182,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? homeInitial,
     TResult? Function(_Loading value)? homeLoading,
     TResult? Function(_Success value)? homeSuccess,
+    TResult? Function(_Failure value)? homeFailure,
   }) {
     return homeInitial?.call(this);
   }
@@ -180,6 +193,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? homeInitial,
     TResult Function(_Loading value)? homeLoading,
     TResult Function(_Success value)? homeSuccess,
+    TResult Function(_Failure value)? homeFailure,
     required TResult orElse(),
   }) {
     if (homeInitial != null) {
@@ -236,7 +250,9 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() homeInitial,
     required TResult Function() homeLoading,
-    required TResult Function() homeSuccess,
+    required TResult Function(NewsModel allNews, NewsModel topHeadLines)
+        homeSuccess,
+    required TResult Function(ErrorModel errorModel) homeFailure,
   }) {
     return homeLoading();
   }
@@ -246,7 +262,8 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? homeInitial,
     TResult? Function()? homeLoading,
-    TResult? Function()? homeSuccess,
+    TResult? Function(NewsModel allNews, NewsModel topHeadLines)? homeSuccess,
+    TResult? Function(ErrorModel errorModel)? homeFailure,
   }) {
     return homeLoading?.call();
   }
@@ -256,7 +273,8 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? homeInitial,
     TResult Function()? homeLoading,
-    TResult Function()? homeSuccess,
+    TResult Function(NewsModel allNews, NewsModel topHeadLines)? homeSuccess,
+    TResult Function(ErrorModel errorModel)? homeFailure,
     required TResult orElse(),
   }) {
     if (homeLoading != null) {
@@ -271,6 +289,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_Initial value) homeInitial,
     required TResult Function(_Loading value) homeLoading,
     required TResult Function(_Success value) homeSuccess,
+    required TResult Function(_Failure value) homeFailure,
   }) {
     return homeLoading(this);
   }
@@ -281,6 +300,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_Initial value)? homeInitial,
     TResult? Function(_Loading value)? homeLoading,
     TResult? Function(_Success value)? homeSuccess,
+    TResult? Function(_Failure value)? homeFailure,
   }) {
     return homeLoading?.call(this);
   }
@@ -291,6 +311,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_Initial value)? homeInitial,
     TResult Function(_Loading value)? homeLoading,
     TResult Function(_Success value)? homeSuccess,
+    TResult Function(_Failure value)? homeFailure,
     required TResult orElse(),
   }) {
     if (homeLoading != null) {
@@ -309,6 +330,8 @@ abstract class _$$SuccessImplCopyWith<$Res> {
   factory _$$SuccessImplCopyWith(
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({NewsModel allNews, NewsModel topHeadLines});
 }
 
 /// @nodoc
@@ -321,35 +344,71 @@ class __$$SuccessImplCopyWithImpl<$Res>
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? allNews = null,
+    Object? topHeadLines = null,
+  }) {
+    return _then(_$SuccessImpl(
+      null == allNews
+          ? _value.allNews
+          : allNews // ignore: cast_nullable_to_non_nullable
+              as NewsModel,
+      null == topHeadLines
+          ? _value.topHeadLines
+          : topHeadLines // ignore: cast_nullable_to_non_nullable
+              as NewsModel,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$SuccessImpl implements _Success {
-  const _$SuccessImpl();
+  const _$SuccessImpl(this.allNews, this.topHeadLines);
+
+  @override
+  final NewsModel allNews;
+  @override
+  final NewsModel topHeadLines;
 
   @override
   String toString() {
-    return 'HomeState.homeSuccess()';
+    return 'HomeState.homeSuccess(allNews: $allNews, topHeadLines: $topHeadLines)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SuccessImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessImpl &&
+            (identical(other.allNews, allNews) || other.allNews == allNews) &&
+            (identical(other.topHeadLines, topHeadLines) ||
+                other.topHeadLines == topHeadLines));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, allNews, topHeadLines);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
+      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() homeInitial,
     required TResult Function() homeLoading,
-    required TResult Function() homeSuccess,
+    required TResult Function(NewsModel allNews, NewsModel topHeadLines)
+        homeSuccess,
+    required TResult Function(ErrorModel errorModel) homeFailure,
   }) {
-    return homeSuccess();
+    return homeSuccess(allNews, topHeadLines);
   }
 
   @override
@@ -357,9 +416,10 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? homeInitial,
     TResult? Function()? homeLoading,
-    TResult? Function()? homeSuccess,
+    TResult? Function(NewsModel allNews, NewsModel topHeadLines)? homeSuccess,
+    TResult? Function(ErrorModel errorModel)? homeFailure,
   }) {
-    return homeSuccess?.call();
+    return homeSuccess?.call(allNews, topHeadLines);
   }
 
   @override
@@ -367,11 +427,12 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? homeInitial,
     TResult Function()? homeLoading,
-    TResult Function()? homeSuccess,
+    TResult Function(NewsModel allNews, NewsModel topHeadLines)? homeSuccess,
+    TResult Function(ErrorModel errorModel)? homeFailure,
     required TResult orElse(),
   }) {
     if (homeSuccess != null) {
-      return homeSuccess();
+      return homeSuccess(allNews, topHeadLines);
     }
     return orElse();
   }
@@ -382,6 +443,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function(_Initial value) homeInitial,
     required TResult Function(_Loading value) homeLoading,
     required TResult Function(_Success value) homeSuccess,
+    required TResult Function(_Failure value) homeFailure,
   }) {
     return homeSuccess(this);
   }
@@ -392,6 +454,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function(_Initial value)? homeInitial,
     TResult? Function(_Loading value)? homeLoading,
     TResult? Function(_Success value)? homeSuccess,
+    TResult? Function(_Failure value)? homeFailure,
   }) {
     return homeSuccess?.call(this);
   }
@@ -402,6 +465,7 @@ class _$SuccessImpl implements _Success {
     TResult Function(_Initial value)? homeInitial,
     TResult Function(_Loading value)? homeLoading,
     TResult Function(_Success value)? homeSuccess,
+    TResult Function(_Failure value)? homeFailure,
     required TResult orElse(),
   }) {
     if (homeSuccess != null) {
@@ -412,5 +476,169 @@ class _$SuccessImpl implements _Success {
 }
 
 abstract class _Success implements HomeState {
-  const factory _Success() = _$SuccessImpl;
+  const factory _Success(
+      final NewsModel allNews, final NewsModel topHeadLines) = _$SuccessImpl;
+
+  NewsModel get allNews;
+  NewsModel get topHeadLines;
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FailureImplCopyWith<$Res> {
+  factory _$$FailureImplCopyWith(
+          _$FailureImpl value, $Res Function(_$FailureImpl) then) =
+      __$$FailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ErrorModel errorModel});
+}
+
+/// @nodoc
+class __$$FailureImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$FailureImpl>
+    implements _$$FailureImplCopyWith<$Res> {
+  __$$FailureImplCopyWithImpl(
+      _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorModel = null,
+  }) {
+    return _then(_$FailureImpl(
+      null == errorModel
+          ? _value.errorModel
+          : errorModel // ignore: cast_nullable_to_non_nullable
+              as ErrorModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FailureImpl implements _Failure {
+  const _$FailureImpl(this.errorModel);
+
+  @override
+  final ErrorModel errorModel;
+
+  @override
+  String toString() {
+    return 'HomeState.homeFailure(errorModel: $errorModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FailureImpl &&
+            (identical(other.errorModel, errorModel) ||
+                other.errorModel == errorModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorModel);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
+      __$$FailureImplCopyWithImpl<_$FailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() homeInitial,
+    required TResult Function() homeLoading,
+    required TResult Function(NewsModel allNews, NewsModel topHeadLines)
+        homeSuccess,
+    required TResult Function(ErrorModel errorModel) homeFailure,
+  }) {
+    return homeFailure(errorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? homeInitial,
+    TResult? Function()? homeLoading,
+    TResult? Function(NewsModel allNews, NewsModel topHeadLines)? homeSuccess,
+    TResult? Function(ErrorModel errorModel)? homeFailure,
+  }) {
+    return homeFailure?.call(errorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? homeInitial,
+    TResult Function()? homeLoading,
+    TResult Function(NewsModel allNews, NewsModel topHeadLines)? homeSuccess,
+    TResult Function(ErrorModel errorModel)? homeFailure,
+    required TResult orElse(),
+  }) {
+    if (homeFailure != null) {
+      return homeFailure(errorModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) homeInitial,
+    required TResult Function(_Loading value) homeLoading,
+    required TResult Function(_Success value) homeSuccess,
+    required TResult Function(_Failure value) homeFailure,
+  }) {
+    return homeFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? homeInitial,
+    TResult? Function(_Loading value)? homeLoading,
+    TResult? Function(_Success value)? homeSuccess,
+    TResult? Function(_Failure value)? homeFailure,
+  }) {
+    return homeFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? homeInitial,
+    TResult Function(_Loading value)? homeLoading,
+    TResult Function(_Success value)? homeSuccess,
+    TResult Function(_Failure value)? homeFailure,
+    required TResult orElse(),
+  }) {
+    if (homeFailure != null) {
+      return homeFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Failure implements HomeState {
+  const factory _Failure(final ErrorModel errorModel) = _$FailureImpl;
+
+  ErrorModel get errorModel;
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

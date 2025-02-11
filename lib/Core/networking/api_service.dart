@@ -1,9 +1,9 @@
-import 'package:retrofit/error_logger.dart';
-
-import 'api_constants.dart';
-import '../../Features/home/data/models/news_model.dart';
 import 'package:dio/dio.dart';
+import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
+
+import '../../Features/home/data/models/news_model.dart';
+import 'api_constants.dart';
 
 part 'api_service.g.dart';
 

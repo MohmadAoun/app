@@ -1,11 +1,12 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'news_model.g.dart';
 
 @JsonSerializable()
 class NewsModel {
-  final String status;
-  final int totalResults;
-  final Articles articles;
+  final String? status;
+  final int? totalResults;
+  final List<Articles>? articles;
 
   NewsModel(this.status, this.totalResults, this.articles);
   factory NewsModel.fromJson(Map<String, dynamic> json) =>
@@ -14,14 +15,14 @@ class NewsModel {
 
 @JsonSerializable()
 class Articles {
-  final Source source;
-  final String author;
-  final String title;
-  final String description;
-  final String url;
-  final String urlToImage;
-  final String publishedAt;
-  final String content;
+  final Source? source;
+  final String? author;
+  final String? title;
+  final String? description;
+  final String? url;
+  final String? urlToImage;
+  final String? publishedAt;
+  final String? content;
 
   Articles(this.source, this.author, this.title, this.description, this.url,
       this.urlToImage, this.publishedAt, this.content);
@@ -32,8 +33,8 @@ class Articles {
 
 @JsonSerializable()
 class Source {
-  final int id;
-  final String name;
+  final String? id;
+  final String? name;
 
   Source(this.id, this.name);
 
